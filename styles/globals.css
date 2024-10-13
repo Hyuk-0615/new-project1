@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* 전체 컨테이너 스타일 */
+.container {
+    display: flex; /* Flexbox 사용 */
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 수평 중앙 정렬 */
+    justify-content: center; /* 수직 중앙 정렬 */
+    min-height: 100vh; /* 화면 전체 높이 사용 */
+}
+
+.hero {
+  background-image: url('https://cdn.pixabay.com/photo/2015/09/01/09/33/school-916678_1280.jpg'); /* 기본 배경 이미지 */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 200px 200px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin: 0;
+  margin-bottom: 30px; /* h1 아래에 여백 추가 */
+}
+
+.hero p {
+  font-size: 24px;
+  margin: 0; /* p의 기본 마진 제거 */
+}
+
+.header {
+  text-align: center; /* 텍스트 가운데 정렬 */
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 36px;
+  color: #333;
+  margin: 0;
+}
+
+.header p {
+  font-size: 18px;
+  color: #666;
+}
+
+.button {
+  margin: 10px;
+  padding: 15px 30px; /* 버튼의 패딩을 조정하여 크기 증가 */
+  font-size: 36px; /* 버튼 글자 크기 설정 */
+  color: white;
+  background-color: #0070f3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 500px; /* 버튼의 너비를 설정 (원하는 크기로 조정 가능) */
+}
+
+.button:hover {
+  background-color: #005bb5;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.category {
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 24px; /* 글자 크기 설정 */
+}
+
+.category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.featured-posts, .recent-posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.post {
+  background-color: white;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.post h3 {
+  margin: 10px 0;
+}
+
+.post p {
+  color: #666;
+}
+
+/* 문제 및 피드백 스타일 */
+.question, .feedback {
+    text-align: center; /* 텍스트 중앙 정렬 */
+    margin: 20px 0; /* 위아래 마진 추가 */
+    font-size: 36px; /* 문제 글자 크기 설정 */
+}
+
+.score {
+  font-size: 40px; /* 점수 글자 크기 설정 */
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center; /* 점수 텍스트 가운데 정렬 */
+}
+
+.category-image {
+  width: 200px; /* 이미지 너비 */
+  height: 200px; /* 이미지 높이 */
+  margin-bottom: 20px; /* 이미지와 텍스트 사이의 간격 */
+}
+
+/* 정답 글자 크기 설정 (정답을 표시할 때 사용할 수 있는 클래스) */
+.correct-answer {
+  font-size: 22px; /* 정답 글자 크기 설정 */
+  color: white; /* 정답 색상 설정 */
+  text-align: center;
+}
+
+/* styles/globals.css */
+.feedback {
+  font-size: 18px; /* 피드백 글자 크기 설정 */
+  color: #ff0000; /* 피드백 색상 설정 (오답은 빨간색) */
+  margin-top: 10px; /* 피드백과 질문 사이의 간격 설정 */
+  text-align: center; /* 피드백 텍스트 가운데 정렬 */
+}
+
+/* styles/globals.css */
+.reset-button {
+  margin: 10px;
+  padding: 15px 30px; /* 패딩을 조정하여 크기 증가 */
+  font-size: 20px; /* 글자 크기 설정 */
+  color: white;
+  background-color: #ff5722; /* 다른 배경색 설정 */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 300px; /* 버튼의 너비를 설정 */
+}
+
+.reset-button:hover {
+  background-color: #e64a19; /* 호버 시 색상 변경 */
+}
+
+/* styles/globals.css */
+.feedback-large {
+  font-size: 36px; /* 원하는 글자 크기로 조정 */
+  color: #ff0000; /* 피드백 색상 설정 (오답은 빨간색) */
+  margin-top: 10px; /* 피드백과 질문 사이의 간격 설정 */
+  text-align: center; /* 피드백 텍스트 가운데 정렬 */
+}
+
+/* 공통 버튼 스타일 */
+.unit {
+  background-color: #007BFF; /* 파란색 배경 */
+  border: none; /* 테두리 없음 */
+  color: white; /* 글자색 흰색 */
+  padding: 15px 32px; /* 패딩 */
+  text-align: center; /* 중앙 정렬 */
+  text-decoration: none; /* 밑줄 없음 */
+  display: block; /* 블록 요소로 설정하여 한 줄에 하나만 표시 */
+  width: 200%; /* 너비를 100%로 설정 */
+  height: 100px; /* 고정 높이 설정 */
+  font-size: 36px; /* 글자 크기 */
+  margin: 4px 2px; /* 마진 */
+  cursor: pointer; /* 커서 포인터 */
+  border-radius: 4px; /* 모서리 둥글게 */
+  transition: background-color 0.3s; /* 배경색 전환 효과 */
+}
+
+.unit:hover {
+  background-color: #0056b3; /* 호버 시 배경색 변경 */
+}
